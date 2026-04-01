@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DevOps Project 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      width: 70%;
+      padding: 10px;
+      margin-right: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    ul {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      background: #f1f1f1;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Users</h1>
+
+  <input type="text" id="name" placeholder="Enter name">
+  <button onclick="addUser()">Add</button>
+
+  <ul id="users"></ul>
+</div>
+
+<script>
+async function fetchUsers() {
+  const res = await fetch("/users");
+  const data = await res.json();
+
+  const list = document.getElementById("users");
+  list.innerHTML = "";
+
+  data.forEach(user => {
+    const li = document.createElement("li");
+    li.textContent = user.name;
+    list.appendChild(li);
+  });
+}
+
+async function addUser() {
+  const name = document.getElementById("name").value;
+
+  if (!name) return;
+
+  await fetch("/users", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ name })
+  });
+
+  document.getElementById("name").value = "";
+  fetchUsers();
+}
+
+fetchUsers();
+</script>
+
+</body>
+</html>
