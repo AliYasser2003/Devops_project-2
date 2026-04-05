@@ -1,7 +1,8 @@
-DevOps Project 2 --Multi Container Application
-*************************************************
-This project demonstrates a containerized full-stack application using Docker Compose.
+* (SIMPLE UI AND FOCUSING ON THE ARCHITECTURE OF BUILDING AS DEVOPS ENGINEER)
 
+Users Dashboard --Multi Container Application
+*************************************************
+This project demonstrates a production-style multi-container application using Docker Compose
 
 Architecture
 ***************
@@ -26,6 +27,13 @@ How It Works
 4) Nginx forwards API requests to Node.js backend
 5) Node.js processes the request and communicates with PostgreSQL which stores data
 
+Fixes & Improvements
+***********************
+1) Resolved container networking issues using service names instead of localhost
+2) Fixed PostgreSQL authentication and connection errors
+3) Proper separation of frontend (Nginx) and backend (Node.js)
+4) Implemented correct port and service configuration
+
 FINAL:
 This project helped me gain hands-on experience with:
 1) build and run multi-container applications using Docker Compose
@@ -33,3 +41,7 @@ This project helped me gain hands-on experience with:
 3) connect a backend application to a database inside containers
 4) Also i learnt in it to debug container issues using:
      (docker ps), (docker logs), (docker inspect)
+
+UI Preview
+***************
+![App UI]()
