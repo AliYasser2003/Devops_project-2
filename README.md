@@ -13,7 +13,7 @@ PostgreSQL (Database)
 User -> Nginx -> Node.js -> PostgreSQL
 
 
-### Access
+#### Access
 ************
 Frontend: http://localhost
 API: http://localhost/users
@@ -27,14 +27,14 @@ API: http://localhost/users
 4) Nginx forwards API requests to Node.js backend
 5) Node.js processes the request and communicates with PostgreSQL which stores data
 
-##### Fixes & Improvements
+#### Fixes & Improvements
 *****************************
 1) Resolved container networking issues using service names instead of localhost
 2) Fixed PostgreSQL authentication and connection errors
 3) Proper separation of frontend (Nginx) and backend (Node.js)
 4) Implemented correct port and service configuration
 
-###### FINAL:
+#### FINAL:
 ***************
 This project helped me gain hands-on experience with:
 1) build and run multi-container applications using Docker Compose
@@ -46,3 +46,7 @@ This project helped me gain hands-on experience with:
 UI Preview
 ********************
 ![App UI](User-Dashboard.png)
+
+## Author
+Ali Yasser
+
