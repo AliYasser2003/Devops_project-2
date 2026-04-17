@@ -43,6 +43,6 @@ This project helped me gain hands-on experience with:
 4) Also i learnt in it to debug container issues using:
      (docker ps), (docker logs), (docker inspect)
 
-####### UI Preview
+UI Preview
 ********************
 ![App UI](User-Dashboard.png)
