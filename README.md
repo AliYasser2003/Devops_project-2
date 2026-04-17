@@ -4,8 +4,8 @@
 *************************************************
 This project demonstrates a production-style multi-container application using Docker Compose
 
-Architecture
-***************
+## Architecture
+*****************
 Nginx (Reverse Proxy & Frontend)
 Node.js (Backend API)
 PostgreSQL (Database)
@@ -13,22 +13,22 @@ PostgreSQL (Database)
 User -> Nginx -> Node.js -> PostgreSQL
 
 
-Access
-*********
+### Access
+************
 Frontend: http://localhost
 API: http://localhost/users
 
 
-How It Works
-***************
+#### How It Works
+*******************
 1) User opens the application in the browser (http://localhost)
 2) Nginx serves the frontend (HTML page)
 3) When user interacts (add/get users), frontend sends API requests
 4) Nginx forwards API requests to Node.js backend
 5) Node.js processes the request and communicates with PostgreSQL which stores data
 
-Fixes & Improvements
-***********************
+##### Fixes & Improvements
+*****************************
 1) Resolved container networking issues using service names instead of localhost
 2) Fixed PostgreSQL authentication and connection errors
 3) Proper separation of frontend (Nginx) and backend (Node.js)
@@ -42,6 +42,6 @@ This project helped me gain hands-on experience with:
 4) Also i learnt in it to debug container issues using:
      (docker ps), (docker logs), (docker inspect)
 
-UI Preview
-***************
+###### UI Preview
+********************
 ![App UI](User-Dashboard.png)
